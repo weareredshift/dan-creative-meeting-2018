@@ -1,0 +1,45 @@
+@import '../../styles/sass-includes';
+
+.flexboxlayout {
+  section {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  main {
+    flex-basis: 66.66%;
+    margin-right: 40px;
+  }
+
+  aside {
+    flex-basis: 33.33%;
+  }
+
+  .grid4 {
+    display: flex;
+    justify-content: space-between;
+
+    .col {
+      width: 25%;
+      margin-right: 40px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .grid2 {
+    display: flex;
+    justify-content: space-between;
+
+    .col {
+      width: 50%;
+      margin-right: 40px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}

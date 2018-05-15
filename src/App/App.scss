@@ -1,2 +1,79 @@
 @import '../styles/sass-includes';
 
+main {
+  @extend %clearfix;
+  background: $pink;
+  padding: 40px 0;
+  min-height: 520px;
+
+  .col {
+    height: 200px;
+    background: rgba($charcoal, 0.35);
+  }
+}
+
+aside {
+  background: $teal;
+  min-height: 520px;
+}
+
+header {
+  background: $grey;
+  min-height: 100px;
+  // media queries
+  @include breakpoint($mobile-lg) {
+    min-height: 70px;
+  }
+}
+
+footer {
+  background: $lightgrey;
+  min-height: 100px;
+  // media queries
+  @include breakpoint($mobile-lg) {
+    min-height: 70px;
+  }
+}
+
+header,
+footer,
+main,
+aside,
+main .col {
+  border: 1px solid rgba($charcoal, 0.5);
+}
+
+.flexboxlayout,
+.floatlayout {
+  header,
+  aside,
+  main {
+    margin-bottom: 40px;
+  }
+}
+
+.flexboxlayout,
+.floatlayout,
+.gridlayout {
+  padding: 10rem 0;
+  // media queries
+  @include breakpoint($tablet-md) {
+    padding: 6rem 0;
+  }
+  @include breakpoint($mobile-lg) {
+    padding: 4rem 0;
+  }
+}
+
+h1 {
+  @include font(bold);
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  // media queries
+  @include breakpoint($tablet-md) {
+    font-size: 4rem;
+  }
+  @include breakpoint($mobile-lg) {
+    font-size: 3rem;
+  }
+}

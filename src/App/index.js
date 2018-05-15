@@ -1,9 +1,16 @@
 import React from 'react';
+import '../styles/core.css';
 import './App.css';
+
+import FloatLayout from './FloatLayout';
+import FlexboxLayout from './FlexboxLayout';
+import GridLayout from './GridLayout';
 
 const Routes = () => (
   <div className="row">
-    <h1>Hi there.</h1>
+    <FloatLayout />
+    <FlexboxLayout />
+    <GridLayout />
   </div>
 );
 
