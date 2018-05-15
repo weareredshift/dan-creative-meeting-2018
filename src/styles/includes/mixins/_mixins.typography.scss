@@ -1,0 +1,60 @@
+// font mixin for selecting the font weight & family
+@mixin font($family) {
+  @if $family == 'bold' {
+    font-family: 'Muli', sans-serif;
+    font-weight: 900;
+  } @else if $family == 'semibold' {
+    font-family: 'Muli', sans-serif;
+    font-weight: 700;
+  } @else if $family == 'regular-italic' {
+    font-family: 'Muli', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  } @else if $family == 'regular' {
+    font-family: 'Muli', sans-serif;
+    font-weight: 400;
+  }
+}
+
+// font size mixin for defining scale
+@mixin font-size($type) {
+  @if $type == 'h1' {
+    font-size: 6.8rem;
+    line-height: 1;
+  }
+
+  @if $type == 'h2' {
+    font-size: 4.2rem;
+    line-height: 1;
+  }
+
+  @if $type == 'h3' {
+    font-size: 3.6rem;
+    line-height: 1.19444444;
+  }
+
+  @if $type == 'h4' {
+    font-size: 2.6rem;
+    line-height: 1.15384615;
+  }
+
+  @if $type == 'h5' {
+    font-size: 2.2rem;
+    line-height: 1.15384615;
+  }
+
+  @if $type == 'b1' {
+    font-size: 1.8rem;
+    line-height: 1.22222222;
+  }
+
+  @if $type == 'b2' {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  @if $type == 'b3' {
+    font-size: 1.3rem;
+    line-height: 1.23076923;
+  }
+}

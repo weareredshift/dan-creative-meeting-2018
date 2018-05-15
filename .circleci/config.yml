@@ -1,0 +1,64 @@
+jobs:
+  build:
+    environment:
+      CIRCLE: true
+    docker:
+      - image: circleci/node:6.11
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn build-css
+      - run: yarn test:coverage
+      - run: yarn lint
+      - run: yarn lint:sass
+      - run: yarn docs
+      - run: yarn build
+      - run: sudo mkdir $CIRCLE_ARTIFACTS/htmlcov
+      - run: sudo mv coverage/* $CIRCLE_ARTIFACTS/htmlcov/
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory
+          root: build
+          # Must be relative path from root
+          paths:
+            - ./
+  deploy_staging:
+    docker:
+      - image: circleci/python
+    steps:
+      - checkout
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: build
+      # Must run this step since the AWS CLI tool does not come packaged with the docker image 
+      - run: sudo pip install awscli --upgrade
+      - run: aws s3 sync build/ s3://$STAGING_BUCKET --delete
+  deploy_production:
+    docker:
+      - image: circleci/python
+    steps:
+      - checkout
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: build
+      # Must run this step since the AWS CLI tool does not come packaged with the docker image
+      - run: sudo pip install awscli --upgrade
+      - run: aws s3 sync build/ s3://$PRODUCTION_BUCKET --delete
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy_staging:
+          requires:
+            - build
+          # Only run this job when a commit is merged to staging
+          filters:
+            branches:
+              only: staging
+      - deploy_production:
+          requires:
+            - build
+          # Only run this job when a commit is merged to master
+          filters:
+            branches:
+              only: master

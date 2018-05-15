@@ -1,0 +1,86 @@
+.form__field {
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.form__input {
+  @include font-size(b2);
+  @include font(regular);
+  appearance: none;
+  padding: 0.8em;
+  border: 0.2rem solid transparent;
+  width: 100%;
+  background: $white;
+  box-shadow: 0 0 7rem 1.6rem rgba($black, 0.06);
+  border-radius: 0.3rem;
+
+  &.has-error {
+    border-color: $red;
+  }
+
+  &[type='file'] {
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: none;
+    background: transparent;
+    border: 0;
+  }
+}
+
+textarea.form__input {
+  min-height: 28.5rem;
+  resize: none;
+}
+
+.is-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.form__label,
+.form__label .label {
+  @include font(semibold);
+  @include font-size(b3);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.form__error {
+  @include font(semibold);
+  @include font-size(b3);
+  text-transform: uppercase;
+  color: $red;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.form__sectiontitle {
+  @include font(semibold);
+  margin-bottom: 1rem;
+}
+
+.form__fieldrow {
+  margin-bottom: 4.5rem;
+}
+
+.form__fields {
+  position: relative;
+}
+
+.form__file {
+  position: relative;
+
+  input[type='file'] {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+}

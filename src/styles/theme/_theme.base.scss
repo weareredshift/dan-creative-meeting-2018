@@ -1,0 +1,27 @@
+// default global body styles
+body {
+  color: $charcoal;
+  background: $almostwhite;
+}
+
+// default global link styles
+a,
+.typ--link {
+  color: $pink;
+  transition: color 0.1s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    color: $charcoal;
+  }
+}
+
+.backlink {
+  @include font(semibold);
+  display: block;
+}
+
+.theme--dark { @extend %theme--dark; }
+
+.typ--pink { color: $pink; }
+.typ--teal { color: $teal; }

@@ -1,0 +1,40 @@
+
+// defines basic btn
+.btn {
+  @include font-size(b2);
+  @include font(semibold);
+  text-align: center;
+  min-width: 10rem;
+  background: $pink;
+  color: $white;
+  padding: 0.834em 1.3em;
+  line-height: 1;  
+  cursor: pointer;
+  border: 0.3rem solid $pink;
+  border-radius: 0.3rem;
+  display: inline-block;
+  transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  // media queries
+  @include breakpoint($mobile-sm) {
+    @include font-size(b3);
+    min-width: 0;
+    padding: 0.4em 1em;
+  }
+
+  &.btn--small {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  &.btn--secondary {
+    background: $lightgrey;
+    border-color: $lightgrey;
+  }
+
+  &:hover { background: $grey; border-color: $grey; }
+
+  &.is-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

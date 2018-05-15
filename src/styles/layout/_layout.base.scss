@@ -1,0 +1,50 @@
+.disable-scroll {
+  overflow: hidden;
+}
+
+// align content left for box model layouts
+.layout--left {
+  float: left;
+}
+
+// align content left for box model layouts
+.layout--right {
+  float: right;
+}
+
+// force position relative, used to constrain absolute children
+.layout--relative {
+  position: relative;
+}
+
+.layout--block {
+  display: block;
+}
+
+.content {
+  width: 100%;
+  padding: 6rem 14rem;
+  // media queries
+  @include breakpoint($desktop-sm) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  @include breakpoint($tablet-sm) {
+    padding: 4rem 0 6rem;
+  }
+}
+
+.sectiontitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .search {
+    max-width: 23rem;
+  }
+}
+
+// clearfix class, % defined in extends
+.cf {
+  @extend %clearfix;
+}
