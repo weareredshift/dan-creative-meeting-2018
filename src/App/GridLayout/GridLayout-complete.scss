@@ -1,0 +1,31 @@
+@import '../../styles/sass-includes';
+
+.gridlayout {
+  header { grid-area: header; }
+  footer { grid-area: footer; }
+  main { grid-area: main; }
+  aside { grid-area: aside; }
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 40px;
+    grid-template-areas:
+    'header header header header header header'
+    'main main main main aside aside'
+    'footer footer footer footer footer footer';
+  }
+
+  .grid4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+  }
+
+  .grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+  }
+}

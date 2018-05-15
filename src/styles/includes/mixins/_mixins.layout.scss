@@ -1,0 +1,3 @@
+@mixin calculate-column-width($col) {
+  width: calc(100% * #{$col} / #{$columns} - #{$gutter} * (1 - #{$col} / #{$columns}));
+}

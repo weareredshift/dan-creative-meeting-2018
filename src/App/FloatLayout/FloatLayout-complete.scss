@@ -1,0 +1,33 @@
+@import '../../styles/sass-includes';
+$columns: 12;
+$gutter: 40px;
+
+
+.floatlayout {
+  main {
+    @include calculate-column-width(8);
+    margin-right: 40px;
+    float: left;
+  }
+
+  aside {
+    @include calculate-column-width(4);
+    float: left;
+  }
+
+  .grid4 .col {
+    @include calculate-column-width(3);
+    float: left;
+    margin-right: 40px;
+
+    &:last-of-type { margin-right: 0; }
+  }
+
+  .grid2 .col {
+    @include calculate-column-width(6);
+    float: left;
+    margin-right: 40px;
+
+    &:last-of-type { margin-right: 0; }
+  }
+}
