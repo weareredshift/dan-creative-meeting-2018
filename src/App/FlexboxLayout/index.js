@@ -6,6 +6,7 @@ function Flexbox () {
     <div className="flexboxlayout">
       <h1>Flexbox Layout</h1>
 
+      { /* -------------------------------------------------- */ }
       { /* Header */ }
       <header />
 
@@ -33,6 +34,8 @@ function Flexbox () {
 
       { /* Footer */ }
       <footer />
+      { /* -------------------------------------------------- */ }
+
     </div>
   );
 }

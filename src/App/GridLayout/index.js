@@ -6,6 +6,7 @@ function GridLayout () {
     <div className="gridlayout">
       <h1>Grid Layout</h1>
 
+      { /* -------------------------------------------------- */ }
       <section>
 
         { /* Header */ }
@@ -33,6 +34,8 @@ function GridLayout () {
         <footer />
 
       </section>
+      { /* -------------------------------------------------- */ }
+
     </div>
   );
 }

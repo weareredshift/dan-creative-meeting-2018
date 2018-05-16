@@ -6,6 +6,7 @@ function FloatLayout () {
     <div className="floatlayout">
       <h1>Float Layout</h1>
 
+      { /* -------------------------------------------------- */ }
       { /* Header */ }
       <header />
 
@@ -33,6 +34,8 @@ function FloatLayout () {
 
       { /* Footer */ }
       <footer />
+      { /* -------------------------------------------------- */ }
+
     </div>
   );
 }
